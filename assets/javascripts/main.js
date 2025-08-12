@@ -171,6 +171,24 @@ function generateResume() {
         html2pdf(areaCV, opt);
     }
 }
+function calcularEdad(fechaNacimiento) {
+    const hoy = new Date();
+    const nacimiento = new Date(fechaNacimiento);
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    const mes = hoy.getMonth() - nacimiento.getMonth();
+    const dia = hoy.getDate() - nacimiento.getDate();
+
+    if (mes < 0 || (mes === 0 && dia < 0)) {
+      edad--;
+    }
+    return edad;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const edadElemento = document.getElementById("edad");
+    const fechaNac = "1988-01-22";  // Cambia por tu fecha real en formato AAAA-MM-DD
+    edadElemento.textContent = calcularEdad(fechaNac) + " años";
+  });
 
 // Action executed by clicking on the button => generation of the final PDF CV CV
 resumeButton.addEventListener("click", () => {
