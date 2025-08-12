@@ -560,30 +560,40 @@ img {
     padding-left: 2rem;
 }
 
+/* Contenedor de cada habilidad, vertical */
 .skills_name {
-    margin-bottom: .25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* texto alineado a la izquierda */
+  margin-bottom: 0.8rem;
 }
 
+/* Texto de la habilidad */
 .skills_text {
-    display: inline-block;
-    width: 100px;
+  font-weight: var(--font-semi-bold);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--title-color);
+  width: 100%; /* para que ocupe toda la línea */
 }
 
+/* Caja de la barra */
 .skills_box {
-    display: inline-block;
-    width: 150px;
-    height: 10px;
-    border-radius: 6px;
-    overflow: hidden;
-    background-color: var(--text-color-light);
+  width: 150px; /* o 100% si quieres que sea responsiva */
+  height: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--text-color-light);
 }
 
+/* Barra de progreso */
 .skills_progress {
-    background-color: var(--text-color);
-    display: block;
-    height: 10px;
-    border-radius: 6px;
+  background-color: var(--accent, #0b74de); /* el color principal */
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  transition: width 0.5s ease-in-out;
 }
+
 
 /* Certificates */
 
