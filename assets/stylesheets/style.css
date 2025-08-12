@@ -54,15 +54,35 @@ html {
 
 .change-theme {
     position: absolute;
-    right: 0;
+    right: 2rem;
     top: 2.2rem;
     display: flex;
     color: var(--text-color);
     font-size: 1.2rem;
     cursor: pointer;
+    z-index: var(--z-fixed);
+    transition: color 0.3s ease;
 }
 
 .change-theme:hover {
+    color: var(--title-color);
+}
+
+/* Generate PDF Button */
+
+.generate-pdf {
+    position: absolute;
+    left: 2rem;
+    top: 2.2rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: var(--z-fixed);
+    transition: color 0.3s ease;
+    display: none; /* solo aparece en desktop */
+}
+
+.generate-pdf:hover {
     color: var(--title-color);
 }
 
@@ -74,22 +94,6 @@ body.dark-theme {
     --container-color: #212121;
     --container-color-alt: #181616;
     --body-color: #2B2B2B;
-}
-
-/* Generate PDF Button */
-
-.generate-pdf {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 2.2rem;
-    color: var(--text-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.generate-pdf:hover {
-    color: var(--title-color);
 }
 
 /* Scale CV */
@@ -321,9 +325,16 @@ img {
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
         border-radius: 1rem 1rem 0 0;
         z-index: var(--z-fixed);
-        transition: all 0.5s ease;
+        transition: bottom 0.5s ease;
     }
 }
+
+/* Cuando el menú está abierto (clase show-menu) */
+.show-menu {
+    bottom: var(--header-height);
+}
+
+/* Navegación logo y toggle */
 
 .nav_logo,
 .nav_toggle {
@@ -334,7 +345,10 @@ img {
 .nav_toggle {
     font-size: 1.2rem;
     cursor: pointer;
+    user-select: none;
 }
+
+/* Lista de links */
 
 .nav_list {
     display: grid;
@@ -352,27 +366,17 @@ img {
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
     font-weight: var(--font-medium);
+    transition: color 0.3s ease;
 }
 
-.nav_link:hover {
+.nav_link:hover,
+.active-link {
     color: var(--title-color);
 }
 
 .nav_icon {
     font-size: 1.2rem;
     margin-bottom: var(--margin-1);
-}
-
-/* Show menu */
-
-.show-menu {
-    bottom: var(--header-height);
-}
-
-/* Active menu link */
-
-.active-link {
-    color: var(--title-color);
 }
 
 /* Home page */
@@ -522,6 +526,8 @@ img {
 .experience_data,
 .certificate_data {
     gap: .35rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .education_title,
@@ -642,6 +648,8 @@ img {
     color: var(--text-color-light);
 }
 
+/* Scroll to top button */
+
 .scrolltop {
     position: fixed;
     right: 1.2rem;
@@ -655,6 +663,7 @@ img {
     z-index: var(--z-tooltip);
     transition: 0.4s;
     visibility: hidden;
+    cursor: pointer;
 }
 
 .scrolltop_icon {
@@ -744,3 +753,184 @@ img {
         padding-left: 2rem;
     }
 }
+
+/* --- MEJORAS PARA IMPRESIÓN SIN OCULTAR NADA --- */
+@media print {
+  /* Mostrar botones y menús aunque en pantalla estén ocultos */
+  .generate-pdf,
+  .change-theme,
+  .l-header,
+  .scrolltop,
+  .nav_menu {
+    display: block !important;
+    position: static !important;
+    box-shadow: none !important;
+  }
+
+  /* General para cuerpo */
+  body {
+    background-color: white !important;
+    color: #000 !important;
+    font-size: 12pt !important;
+    margin: 1cm !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Contenedor principal */
+  .bd-container {
+    max-width: 100% !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Layout resume */
+  .resume {
+    display: block !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+
+  /* Evitar que se corten elementos en página */
+  .section,
+  .education_content,
+  .experience_content,
+  .certificate_content {
+    page-break-inside: avoid !important;
+  }
+
+  /* Imágenes adaptables */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    page-break-inside: avoid;
+  }
+
+  /* Quitar sombras y efectos no imprimibles */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Evitar saltos dentro de títulos y párrafos */
+  h1,
+  h2,
+  h3,
+  p {
+    page-break-after: avoid;
+  }
+
+  /* Links visibles en negro y subrayados */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
+.strengths {
+    margin-top: 2.5rem;
+}
+
+.strengths_container {
+    background-color: var(--card);
+    padding: 1.5rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+}
+
+.strengths_paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 1rem;
+    white-space: pre-line;
+}
+
+.strengths_list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.strengths_list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.strengths_list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+/* Fortalezas */
+.strengths {
+    margin-top: 2.5rem;
+}
+
+.strengths_container {
+    background-color: var(--card);
+    padding: 1.5rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
+}
+
+.strengths_paragraph {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text);
+    margin-bottom: 1rem;
+    white-space: pre-line;
+}
+
+.strengths_list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.strengths_list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.strengths_list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* NAV - añadir icono estrella para Fortalezas */
+.nav_list .nav_item a[href="#strengths"] .nav_icon {
+    color: var(--primary);
+}
+
+/* Ajustes generales para scrolltop (si no está ya) */
+.scrolltop {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 0.6rem;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.scrolltop:hover {
+    opacity: 1;
+}
+

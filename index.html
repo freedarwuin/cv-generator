@@ -1,10 +1,10 @@
 <!--
  ┌──────────────────────────────────────────────────────────────────────┐
  │ @name         Generador de CV                                         │
- │ @author       Léa Gallier                                            │
+ │ @author       Léa Gallier / Adaptado para Darwuin Pedroza            │
  │ @version      1.0                                                    │
  │ @created      2022-12-19                                             │
- │ @modified     2023-03-17                                             │
+ │ @modified     2025-08-12                                             │
  │ @description  Currículum con modo oscuro/claro y exportación a PDF   │
  └──────────────────────────────────────────────────────────────────────┘
 -->
@@ -13,156 +13,125 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Currículum Responsive</title>
+    <title>Currículum Responsive - Darwuin Pedroza</title>
 
-    <!-- Importar Fontawesome -->
+    <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/cb81440751.js" crossorigin="anonymous"></script>
 
-    <!-- Importar hojas de estilo en CSS3 -->
-    <link rel="stylesheet" href="assets/stylesheets/style.css" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/stylesheets/style.css" type="text/css" />
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/pictures/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/pictures/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/pictures/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/pictures/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/pictures/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/pictures/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/pictures/favicon/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/pictures/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/pictures/favicon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/pictures/favicon/android-chrome-512x512.png" />
 </head>
 
 <body>
 <header class="l-header" id="header">
-    <!-- Menú de navegación -->
     <nav class="nav bd-container">
         <a href="#" class="nav_logo">Darwuin Pedroza</a>
         <div class="nav_menu" id="nav-menu">
             <ul class="nav_list">
-
                 <li class="nav_item">
-                    <a href="#home" class="nav_link active-link">
-                        <i class="fa-solid fa-house nav_icon"></i>Inicio
-                    </a>
+                    <a href="#home" class="nav_link active-link"><i class="fa-solid fa-house nav_icon"></i>Inicio</a>
                 </li>
-
                 <li class="nav_item">
-                    <a href="#profile" class="nav_link">
-                        <i class="fa-solid fa-user nav_icon"></i>Perfil
-                    </a>
+                    <a href="#profile" class="nav_link"><i class="fa-solid fa-user nav_icon"></i>Perfil</a>
                 </li>
-
                 <li class="nav_item">
-                    <a href="#skills" class="nav_link">
-                        <i class="fa-solid fa-computer nav_icon"></i>Habilidades
-                    </a>
+                    <a href="#skills" class="nav_link"><i class="fa-solid fa-computer nav_icon"></i>Habilidades</a>
                 </li>
-
                 <li class="nav_item">
-                    <a href="#languages" class="nav_link">
-                        <i class="fa-solid fa-comments nav_icon"></i>Idiomas
-                    </a>
+                    <a href="#languages" class="nav_link"><i class="fa-solid fa-comments nav_icon"></i>Idiomas</a>
                 </li>
-
                 <li class="nav_item">
-                    <a href="#experience" class="nav_link">
-                        <i class="fa-solid fa-briefcase nav_icon"></i>Experiencias
-                    </a>
+                    <a href="#experience" class="nav_link"><i class="fa-solid fa-briefcase nav_icon"></i>Experiencias</a>
                 </li>
-
                 <li class="nav_item">
-                    <a href="#certificates" class="nav_link">
-                        <i class="fa-solid fa-graduation-cap nav_icon"></i>Certificados
-                    </a>
+                    <a href="#certificates" class="nav_link"><i class="fa-solid fa-graduation-cap nav_icon"></i>Certificados</a>
                 </li>
-
                 <li class="nav_item">
-                    <a href="#education" class="nav_link">
-                        <i class="fa-solid fa-book-bookmark nav_icon"></i>Educación
-                    </a>
+                    <a href="#education" class="nav_link"><i class="fa-solid fa-book-bookmark nav_icon"></i>Educación</a>
                 </li>
-
                 <li class="nav_item">
-                    <a href="#interests" class="nav_link">
-                        <i class="fa-solid fa-icons nav_icon"></i>Intereses
-                    </a>
+                    <a href="#interests" class="nav_link"><i class="fa-solid fa-icons nav_icon"></i>Intereses</a>
                 </li>
-
+                <li class="nav_item">
+                    <a href="#strengths" class="nav_link"><i class="fa-solid fa-star nav_icon"></i>Fortalezas</a>
+                </li>
             </ul>
         </div>
 
-        <div class="nav_toggle" id="nav-toggle">
+        <div class="nav_toggle" id="nav-toggle" aria-label="Abrir menú">
             <i class="fa-solid fa-bars"></i>
         </div>
     </nav>
 </header>
 
 <main class="l-main bd-container">
-    <!-- Currículum -->
     <div class="resume" id="area-cv">
         <div class="resume_left">
 
             <!-- INICIO -->
-            <section class="home" id="home">
-                <div class="home_container section bd-grid">
-
+            <section class="home section" id="home">
+                <div class="home_container bd-grid">
                     <div class="home_data bd-grid">
-                        <img src="assets/pictures/profile.png" alt="Icon picture" class="home_img" id="home-img">
-                        <!--<img alt="Icon picture" class="home_img" id="home-img">-->
+                        <img src="assets/pictures/profile.png" alt="Foto de Darwuin Pedroza" class="home_img" id="home-img" />
                         <h1 class="home_title">Darwuin <b>Pedroza</b></h1>
-                        <h3 class="home_profession">Profesional de Ingeniero en Sistemas</h3>
+                        <h3 class="home_profession">Profesional Ingeniero en Sistemas</h3>
                         <div>
-                            <a download="" id="download-button" class="home_button-movil">Descargar</a>
+                            <a href="#" download id="download-button" class="home_button-movil">Descargar CV</a>
                         </div>
                     </div>
 
                     <div class="home_address bd-grid">
                         <span class="home_information">
-                            <i class="fa-solid fa-location-dot home_icon"></i> Ubicación:<br>
+                            <i class="fa-solid fa-location-dot home_icon"></i> Ubicación:<br />
                             San Francisco de Yre, Miranda, Venezuela
                         </span>
                         <span class="home_information">
-                            <i class="fa-solid fa-envelope home_icon"></i> Correo:<br>
+                            <i class="fa-solid fa-envelope home_icon"></i> Correo:<br />
                             <a href="mailto:ingdarwuin@gmail.com" class="home_link">ingdarwuin@gmail.com</a>
                         </span>
                         <span class="home_information">
-                            <i class="fa-solid fa-phone home_icon"></i> Teléfono:<br>
+                            <i class="fa-solid fa-phone home_icon"></i> Teléfono:<br />
                             <a href="tel:+584129056224" class="home_link">0412-9056224</a>
-    </span>
+                        </span>
                         <span class="home_information">
-        <i class="fa-solid fa-id-card home_icon"></i> Cédula de Identidad:<br>
-        V- 18.840.477
-    </span>
+                            <i class="fa-solid fa-id-card home_icon"></i> Cédula de Identidad:<br />
+                            V-18.840.477
+                        </span>
                         <span class="home_information">
-        <i class="fa-solid fa-cake-candles home_icon"></i> Edad:<br>
-        37 años
-    </span>
+                            <i class="fa-solid fa-cake-candles home_icon"></i> Edad:<br />
+                            37 años
+                        </span>
                     </div>
-
                 </div>
 
-                <!-- Botón para cambiar tema -->
-                <i class="fa-solid fa-moon change-theme" title="Tema" id="theme-button"></i>
-
-                <!-- Botón para generar y descargar PDF. Disponible en escritorio. -->
-                <i class="fa-solid fa-download generate-pdf" title="Generar PDF" id="resume-button"></i>
-
+                <!-- Botones -->
+                <i class="fa-solid fa-moon change-theme" title="Cambiar tema" id="theme-button" role="button" tabindex="0"></i>
+                <i class="fa-solid fa-download generate-pdf" title="Generar PDF" id="resume-button" role="button" tabindex="0"></i>
             </section>
 
             <!-- REDES SOCIALES -->
             <section class="social section">
                 <h2 class="section-title">Social</h2>
-
                 <div class="social_container bd-grid">
-                    <a href="https://github.com/freedarwuin" target="_blank" class="social_link">
+                    <a href="https://github.com/freedarwuin" target="_blank" class="social_link" rel="noopener noreferrer">
                         <i class="fa-brands fa-github social_icon"></i> @freedarwuin
                     </a>
-                    <a href="https://www.facebook.com/Ing.D.Pedroza" target="_blank" class="social_link">
+                    <a href="https://www.facebook.com/Ing.D.Pedroza" target="_blank" class="social_link" rel="noopener noreferrer">
                         <i class="fa-brands fa-facebook social_icon"></i> @Ing.D.Pedroza
                     </a>
-                    <a href="https://www.linkedin.com/in/leagallier76/" target="_blank" class="social_link">
+                    <a href="https://www.linkedin.com/in/leagallier76/" target="_blank" class="social_link" rel="noopener noreferrer">
                         <i class="fa-brands fa-instagram social_icon"></i> leagallier76
                     </a>
                 </div>
@@ -171,13 +140,13 @@
             <!-- PERFIL -->
             <section class="profile section" id="profile">
                 <h2 class="section-title">Perfil</h2>
-
                 <p class="profile_description">
-                    Profesional con más de 15 años de experiencia en colaboración con empresas de todos los tamaños. Comprometido con el trabajo en equipo, la mejora continua y el crecimiento organizacional.
+                    Profesional con más de 15 años de experiencia colaborando con empresas de todos los tamaños. Comprometido
+                    con el trabajo en equipo, la mejora continua y el crecimiento organizacional.
                 </p>
             </section>
 
-            <!-- HABILIDADES  -->
+            <!-- HABILIDADES -->
             <section class="skills section" id="skills">
                 <h2 class="section-title">Habilidades</h2>
                 <div class="skills_container">
@@ -200,48 +169,28 @@
                                 <span class="skills_progress" style="width: 95%;"></span>
                             </div>
                         </div>
-                        <!--<div class="skills_name">
-                            <span class="skills_text">Javascript</span>
-                            <div class="skills_box">
-                                <span class="skills_progress" style="width: 80%;"></span>
-                            </div>
-                        </div>-->
-                        <!--<div class="skills_name">
-                            <span class="skills_text">MySQL</span>
-                            <div class="skills_box">
-                                <span class="skills_progress" style="width: 70%;"></span>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
-
             </section>
 
             <!-- IDIOMAS -->
             <section class="languages section" id="languages">
                 <h2 class="section-title">Idiomas</h2>
-
                 <div class="languages_container">
                     <ul class="languages_content bd-grid">
                         <li class="languages_name">
                             <span class="languages_text">Español</span>
                             <span class="languages_stars">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </span>
                         </li>
                         <li class="languages_name">
                             <span class="languages_text">Inglés [Básico]</span>
                             <span class="languages_stars">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star languages_stars_checked"></i>
-                                        <i class="fa-solid fa-star languages_stars_checked"></i>
-                                    </span>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star languages_stars_checked"></i><i class="fa-solid fa-star languages_stars_checked"></i>
+                            </span>
                         </li>
                     </ul>
                 </div>
@@ -254,22 +203,53 @@
             <!-- EXPERIENCIA -->
             <section class="experience section" id="experience">
                 <h2 class="section-title">Experiencia</h2>
-
                 <div class="experience_container bd-grid">
+
                     <div class="experience_content">
                         <div class="experience_time">
                             <span class="experience_rounder"></span>
                             <span class="experience_line"></span>
                         </div>
                         <div class="experience_data bd-grid">
-                            <h3 class="experience_title">SUPERVIDOR</h3>
-                            <span class="experience_company">TECNOHASH 215 C.A | Supervisor de Redes</span>
+                            <h3 class="experience_title">ANALISTA DE DESARROLLO DE SISTEMAS</h3>
+                            <span class="experience_company">VICEPRESIDENCIA DE LA REPÚBLICA</span>
                             <span class="experience_year">Octubre 2021 - 2023</span>
                             <p class="experience_description">
-                                Mantenimiento preventivo y correctivo de las PC´s y servidores, cambio de cables UTP y rediseñar la estructura de RED.
+                                Mi desempeño en esta institución de ente público fue emprender un nuevo camino como desarrollador en aplicaciones WEB.
                             </p>
                         </div>
                     </div>
+
+                    <div class="experience_content">
+                        <div class="experience_time">
+                            <span class="experience_rounder"></span>
+                            <span class="experience_line"></span>
+                        </div>
+                        <div class="experience_data bd-grid">
+                            <h3 class="experience_title">COORDINADOR</h3>
+                            <span class="experience_company">COVEPLAST C.A</span>
+                            <span class="experience_year">Octubre 2021 - 2023</span>
+                            <p class="experience_description">
+                                Mi desempeño en esta institución de ente público fue orientar para el mejor funcionamiento de las redes y sistemas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="experience_content">
+                        <div class="experience_time">
+                            <span class="experience_rounder"></span>
+                            <span class="experience_line"></span>
+                        </div>
+                        <div class="experience_data bd-grid">
+                            <h3 class="experience_title">SUPERVISOR</h3>
+                            <span class="experience_company">TECNOHASH 215 C.A | Supervisor de Redes</span>
+                            <span class="experience_year">Octubre 2021 - 2023</span>
+                            <p class="experience_description">
+                                Mantenimiento preventivo y correctivo de PC´s y servidores, cambio de cables UTP y rediseño de estructura RED.
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="experience_content">
                         <div class="experience_time">
                             <span class="experience_rounder"></span>
@@ -284,6 +264,7 @@
                             </p>
                         </div>
                     </div>
+
                     <div class="experience_content">
                         <div class="experience_time">
                             <span class="experience_rounder"></span>
@@ -297,55 +278,53 @@
                             </p>
                         </div>
                     </div>
+
                 </div>
             </section>
 
             <!-- CERTIFICADOS -->
             <section class="certificate section" id="certificates">
                 <h2 class="section-title">Certificados</h2>
-
                 <div class="certificate_container bd-grid">
+
                     <div class="certificate_content">
                         <div class="certificate_item">
                             <span class="certificate_rounder"></span>
                         </div>
                         <div class="certificate_data bd-grid">
                             <h3 class="certificate_year">2018</h3>
-                            <span class="certificate_title">Estrategias de Mercadeo para mejorar La calidad de Servicio
-                                <!--<span class="certificate_honours">con honores</span>-->
-                                    </span>
+                            <span class="certificate_title">Estrategias de Mercadeo para mejorar la calidad de Servicio</span>
                         </div>
                     </div>
+
                     <div class="certificate_content">
                         <div class="certificate_item">
                             <span class="certificate_rounder"></span>
                         </div>
                         <div class="certificate_data bd-grid">
                             <h3 class="certificate_year">2018</h3>
-                            <span class="certificate_title">NAS-ROS: Network Administration Specialist - Introducción a MikroTik RouterOS y RouterBOARD
-                                <!--<span class="certificate_honours">con honores</span>-->
-                                    </span>
+                            <span class="certificate_title">NAS-ROS: Network Administration Specialist - Introducción a MikroTik RouterOS y RouterBOARD</span>
                         </div>
                     </div>
+
                     <div class="certificate_content">
                         <div class="certificate_item">
                             <span class="certificate_rounder"></span>
                         </div>
                         <div class="certificate_data bd-grid">
                             <h3 class="certificate_year">2018</h3>
-                            <span class="certificate_title">“NAS-HSM: Network Administration Specialist - Introducción a HotSpot con MikroTik RouterOS
-                                <!--<span class="certificate_honours">con honores</span>-->
-                                    </span>
+                            <span class="certificate_title">NAS-HSM: Network Administration Specialist - Introducción a HotSpot con MikroTik RouterOS</span>
                         </div>
                     </div>
+
                 </div>
             </section>
 
             <!-- EDUCACIÓN -->
             <section class="education section" id="education">
                 <h2 class="section-title">Educación</h2>
-
                 <div class="education_container bd-grid">
+
                     <div class="education_content">
                         <div class="education_time">
                             <span class="education_rounder"></span>
@@ -353,20 +332,20 @@
                         </div>
                         <div class="education_data bd-grid">
                             <h3 class="education_title">Diversificado</h3>
-                            <span class="education_studies">Unidad Educativa Nacional “J.A. Pérez Bonalde</span>
-                            <!--<span class="education_year">2018 - 2021</span>-->
+                            <span class="education_studies">Unidad Educativa Nacional “J.A. Pérez Bonalde”</span>
                         </div>
                     </div>
+
                     <div class="education_content">
                         <div class="education_time">
                             <span class="education_rounder"></span>
                         </div>
                         <div class="education_data bd-grid">
                             <h3 class="education_title">Superior</h3>
-                            <span class="education_studies">Ingeniero de Sistema en la universidad nacional experimental de la fuerza armada (UNEFA) Extensión Ocumare del Tuy (Turno Nocturno)</span>
-                            <!--<span class="education_year">2015 - 2018</span>-->
+                            <span class="education_studies">Ingeniero de Sistemas - Universidad Nacional Experimental de la Fuerza Armada (UNEFA) Extensión Ocumare del Tuy (Turno Nocturno)</span>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -401,22 +380,37 @@
                 </div>
             </section>
 
+            <!-- FORTALEZAS -->
+            <section class="strengths section" id="strengths">
+                <h2 class="section-title">Fortalezas</h2>
+                <div class="strengths_container bd-grid">
+                    <p class="strengths_paragraph">
+                        Disponibilidad para trabajar a conveniencia de la empresa.<br />
+                        Interés en participar en programas de adiestramiento que me permitan incorporarme al desarrollo de la empresa.<br />
+                        Disposición para asumir obligaciones, capacidad para trabajar en equipo y mantener relaciones de colaboración.
+                    </p>
+                    <ul class="strengths_list">
+                        <li>Trabajo en equipo</li>
+                        <li>Trabajo con subordinación</li>
+                        <li>Manejo de conflictos</li>
+                        <li>Sistemas de comunicación interna</li>
+                        <li>Inteligencia emocional</li>
+                    </ul>
+                </div>
+            </section>
 
         </div>
     </div>
 </main>
 
-<a href="#" class="scrolltop" id="scroll-top">
+<!-- Scroll Top -->
+<a href="#" class="scrolltop" id="scroll-top" aria-label="Subir al inicio">
     <i class="fa-solid fa-arrow-up scrolltop_icon"></i>
 </a>
 
 <!-- HTML2PDF.js -->
-<!-- Versión 0.8.0 -->
-<!-- <script src="assets/javascripts/html2pdf.v0.8.0.bundle.min.js"></script> -->
-<!-- Versión 0.9.3 -->
 <script src="assets/javascripts/html2pdf.v0.9.3.bundle.min.js"></script>
-
-<!-- Archivo principal Javascript -->
+<!-- Main JS -->
 <script src="assets/javascripts/main.js"></script>
 </body>
 
