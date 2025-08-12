@@ -55,7 +55,7 @@ This is the **first version** of the project (*v1.0*). To improve the project in
 
 ## Demo
 
-Live demo here: [live demo](https://leag76.github.io/cv-generator/ "Go to the live demo")
+Live demo here: [live demo](https://freedarwuin.github.io/cv-generator/ "Go to the live demo")
 
 ## Get started
 
