@@ -5,7 +5,6 @@
 :root {
     --header-height: 3rem;
 
-    /* Colors */
     --title-color: #0B0A0A;
     --text-color: #403A3A;
     --text-color-light: #707070;
@@ -13,10 +12,8 @@
     --container-color-alt: #F0EFEF;
     --body-color: #FCFCFC;
 
-    /* Typography */
     --body-font: 'Poppins', sans-serif;
 
-    /* Fonts size */
     --h1-font-size: 1.5rem;
     --h2-font-size: 1.25rem;
     --h3-font-size: 1rem;
@@ -24,21 +21,16 @@
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
 
-    /* Fonts weight */
     --font-medium: 500;
     --font-semi-bold: 600;
 
-    /* Margins */
     --margin-1: .5rem;
     --margin-2: 1rem;
     --margin-3: 1.5rem;
 
-    /* Z Index */
     --z-tooltip: 10;
     --z-fixed: 100;
 }
-
-/* Base */
 
 *,
 ::before,
@@ -50,8 +42,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Button Light/Dark */
-
 .change-theme {
     position: absolute;
     right: 2rem;
@@ -61,14 +51,7 @@ html {
     font-size: 1.2rem;
     cursor: pointer;
     z-index: var(--z-fixed);
-    transition: color 0.3s ease;
 }
-
-.change-theme:hover {
-    color: var(--title-color);
-}
-
-/* Generate PDF Button */
 
 .generate-pdf {
     position: absolute;
@@ -78,15 +61,8 @@ html {
     font-size: 1.2rem;
     cursor: pointer;
     z-index: var(--z-fixed);
-    transition: color 0.3s ease;
-    display: none; /* solo aparece en desktop */
+    display: none;
 }
-
-.generate-pdf:hover {
-    color: var(--title-color);
-}
-
-/* Dark mode */
 
 body.dark-theme {
     --title-color: #F2F2F2;
@@ -95,8 +71,6 @@ body.dark-theme {
     --container-color-alt: #181616;
     --body-color: #2B2B2B;
 }
-
-/* Scale CV */
 
 body.scale-cv {
     --h1-font-size: 0.938rem;
@@ -107,11 +81,11 @@ body.scale-cv {
     --smaller-font-size: 0.688rem;
 }
 
-/* PDF A4 */
-
 .scale-cv .change-theme,
-.scale-cv .generate-pdf {
-    display: none;
+.scale-cv .generate-pdf,
+.scale-cv .l-header,
+.scale-cv .scrolltop {
+    display: none !important;
 }
 
 .scale-cv .bd-container {
@@ -127,7 +101,8 @@ body.scale-cv {
 }
 
 .scale-cv .resume {
-    height: 1122px;
+    height: auto;
+    min-height: 1122px;
 }
 
 .scale-cv .resume_left {
@@ -213,7 +188,6 @@ body.scale-cv {
 .scale-cv .skills_progress {
     height: 8px;
     border-radius: 4px;
-    transform: translate(0.01px, 0);
 }
 
 .scale-cv .languages_content {
@@ -223,8 +197,6 @@ body.scale-cv {
 .scale-cv .languages_text {
     width: 115px;
 }
-
-/* Body */
 
 body {
     margin: 0 0 var(--header-height) 0;
@@ -264,8 +236,6 @@ img {
     height: auto;
 }
 
-/* Class CSS */
-
 .section {
     padding: 1.5rem 0;
 }
@@ -279,8 +249,6 @@ img {
     text-align: center;
     margin-bottom: var(--margin-3);
 }
-
-/* Layout */
 
 .bd-container {
     max-width: 968px;
@@ -302,10 +270,7 @@ img {
     z-index: var(--z-fixed);
     background-color: var(--body-color);
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
 }
-
-/* Nav */
 
 .nav {
     height: var(--header-height);
@@ -325,16 +290,12 @@ img {
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
         border-radius: 1rem 1rem 0 0;
         z-index: var(--z-fixed);
-        transition: bottom 0.5s ease;
     }
 }
 
-/* Cuando el menú está abierto (clase show-menu) */
 .show-menu {
     bottom: var(--header-height);
 }
-
-/* Navegación logo y toggle */
 
 .nav_logo,
 .nav_toggle {
@@ -345,10 +306,7 @@ img {
 .nav_toggle {
     font-size: 1.2rem;
     cursor: pointer;
-    user-select: none;
 }
-
-/* Lista de links */
 
 .nav_list {
     display: grid;
@@ -366,7 +324,6 @@ img {
     font-size: var(--smaller-font-size);
     color: var(--text-color-light);
     font-weight: var(--font-medium);
-    transition: color 0.3s ease;
 }
 
 .nav_link:hover,
@@ -378,8 +335,6 @@ img {
     font-size: 1.2rem;
     margin-bottom: var(--margin-1);
 }
-
-/* Home page */
 
 .home {
     position: relative;
@@ -446,17 +401,9 @@ img {
     color: var(--title-color);
     padding: 1rem 2rem;
     border-radius: .25rem;
-    transition: all 0.5s ease;
     font-weight: var(--font-medium);
     margin-top: var(--margin-3);
 }
-
-.home_button-movil:hover {
-    background-color: var(--text-color);
-    color: var(--container-color);
-}
-
-/* Social page */
 
 .social_container {
     grid-template-columns: max-content;
@@ -470,10 +417,6 @@ img {
     color: var(--text-color);
 }
 
-.social_link:hover {
-    color: var(--title-color);
-}
-
 .social_icon {
     font-size: 1.2rem;
     display: flex;
@@ -482,13 +425,9 @@ img {
     margin-right: 0.75rem;
 }
 
-/* Profile page */
-
 .profile_description {
     text-align: center;
 }
-
-/* Education page */
 
 .education_content,
 .experience_content,
@@ -553,8 +492,6 @@ img {
     font-size: var(--smaller-font-size);
 }
 
-/* Skills */
-
 .skills_content {
     gap: 0.2rem;
     padding-left: 2rem;
@@ -585,8 +522,6 @@ img {
     border-radius: 6px;
 }
 
-/* Certificates */
-
 .certificate_container {
     gap: 0.75rem;
 }
@@ -600,13 +535,6 @@ img {
     margin-right: 0.38rem;
     margin-left: 0.37rem;
 }
-
-.certificate_honours {
-    font-size: var(--smaller-font-size);
-    color: var(--text-color);
-}
-
-/* Languages */
 
 .languages_content {
     gap: 0.2rem;
@@ -622,15 +550,9 @@ img {
     width: 100px;
 }
 
-.languages_stars {
-    position: initial;
-}
-
 .languages_stars_checked {
     color: var(--text-color-light);
 }
-
-/* Interests */
 
 .interests_container {
     grid-template-columns: repeat(3, 1fr);
@@ -648,8 +570,6 @@ img {
     color: var(--text-color-light);
 }
 
-/* Scroll to top button */
-
 .scrolltop {
     position: fixed;
     right: 1.2rem;
@@ -661,14 +581,7 @@ img {
     background-color: var(--container-color-alt);
     border-radius: 0.25rem;
     z-index: var(--z-tooltip);
-    transition: 0.4s;
     visibility: hidden;
-    cursor: pointer;
-}
-
-.scrolltop_icon {
-    font-size: 1.2rem;
-    color: var(--text-color);
 }
 
 .show-scroll {
@@ -676,16 +589,12 @@ img {
     bottom: 5rem;
 }
 
-/* Screen for small phones  */
-
 @media screen and (max-width: 320px) {
     .nav_list {
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem 0.5rem;
     }
 }
-
-/* Computer screen -> PDF */
 
 @media screen and (min-width: 968px) {
     body {
@@ -735,16 +644,13 @@ img {
         display: none;
     }
 
-    .languages_content {
+    .languages_content,
+    .skills_content {
         padding-left: 0;
     }
 
     .languages_text {
         width: 150px;
-    }
-
-    .skills_content {
-        padding-left: 0;
     }
 
     .interests_container {
@@ -754,87 +660,12 @@ img {
     }
 }
 
-/* --- MEJORAS PARA IMPRESIÓN SIN OCULTAR NADA --- */
-@media print {
-  /* Mostrar botones y menús aunque en pantalla estén ocultos */
-  .generate-pdf,
-  .change-theme,
-  .l-header,
-  .scrolltop,
-  .nav_menu {
-    display: block !important;
-    position: static !important;
-    box-shadow: none !important;
-  }
-
-  /* General para cuerpo */
-  body {
-    background-color: white !important;
-    color: #000 !important;
-    font-size: 12pt !important;
-    margin: 1cm !important;
-    padding: 0 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  /* Contenedor principal */
-  .bd-container {
-    max-width: 100% !important;
-    width: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /* Layout resume */
-  .resume {
-    display: block !important;
-    width: 100% !important;
-    box-shadow: none !important;
-    background: none !important;
-  }
-
-  /* Evitar que se corten elementos en página */
-  .section,
-  .education_content,
-  .experience_content,
-  .certificate_content {
-    page-break-inside: avoid !important;
-  }
-
-  /* Imágenes adaptables */
-  img {
-    max-width: 100% !important;
-    height: auto !important;
-    page-break-inside: avoid;
-  }
-
-  /* Quitar sombras y efectos no imprimibles */
-  * {
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  /* Evitar saltos dentro de títulos y párrafos */
-  h1,
-  h2,
-  h3,
-  p {
-    page-break-after: avoid;
-  }
-
-  /* Links visibles en negro y subrayados */
-  a {
-    color: black !important;
-    text-decoration: underline !important;
-  }
-}
 .strengths {
     margin-top: 2.5rem;
 }
 
 .strengths_container {
-    background-color: var(--card);
+    background-color: var(--container-color-alt);
     padding: 1.5rem 2rem;
     border-radius: 0.75rem;
     box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
@@ -843,7 +674,7 @@ img {
 .strengths_paragraph {
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--text);
+    color: var(--text-color);
     margin-bottom: 1rem;
     white-space: pre-line;
 }
@@ -859,128 +690,109 @@ img {
     padding-left: 1.5rem;
     margin-bottom: 0.6rem;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--title-color);
 }
 
 .strengths_list li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: var(--primary);
-    font-weight: 700;
-}
-/* Fortalezas */
-.strengths {
-    margin-top: 2.5rem;
-}
-
-.strengths_container {
-    background-color: var(--card);
-    padding: 1.5rem 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 3px 8px rgb(0 0 0 / 0.1);
-}
-
-.strengths_paragraph {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--text);
-    margin-bottom: 1rem;
-    white-space: pre-line;
-}
-
-.strengths_list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-
-.strengths_list li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.6rem;
-    font-weight: 600;
-    color: var(--primary);
-}
-
-.strengths_list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--primary);
+    color: var(--title-color);
     font-weight: 700;
 }
 
-/* NAV - añadir icono estrella para Fortalezas */
-.nav_list .nav_item a[href="#strengths"] .nav_icon {
-    color: var(--primary);
-}
-
-/* Ajustes generales para scrolltop (si no está ya) */
-.scrolltop {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    background-color: var(--primary);
-    color: white;
-    padding: 0.5rem 0.6rem;
-    border-radius: 50%;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-}
-
-.scrolltop:hover {
-    opacity: 1;
-}
-
-/* Sección Proyectos */
 .projects {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .projects_container {
-  display: grid;
-  gap: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
 }
 
 .project_content {
-  background-color: var(--card);
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
-}
-
-.project_content:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--container-color-alt);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .project_title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.7rem;
-  color: var(--accent);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    color: var(--title-color);
 }
 
 .project_content p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  color: var(--text-secondary, #555);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .project_link {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 1.5px solid transparent;
-  transition: border-color 0.3s ease;
+    color: var(--title-color);
+    font-weight: 600;
+    text-decoration: underline;
 }
 
-.project_link:hover {
-  border-color: var(--accent);
-  text-decoration: none;
+.scale-cv .education_content,
+.scale-cv .experience_content,
+.scale-cv .certificate_content,
+.scale-cv .project_content,
+.scale-cv .strengths_container {
+    break-inside: avoid;
+    page-break-inside: avoid;
 }
 
+.scale-cv .section,
+.scale-cv h1,
+.scale-cv h2,
+.scale-cv h3 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
 
+@media print {
+    body {
+        background: white !important;
+        color: #000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .bd-container {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .resume {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        width: 100% !important;
+        height: auto !important;
+        box-shadow: none !important;
+    }
+
+    .section,
+    .education_content,
+    .experience_content,
+    .certificate_content,
+    .project_content,
+    .strengths_container {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .generate-pdf,
+    .change-theme,
+    .l-header,
+    .scrolltop,
+    .nav_menu {
+        display: none !important;
+    }
+}
