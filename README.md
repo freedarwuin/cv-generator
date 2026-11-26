@@ -1,78 +1,129 @@
+# CV Generator
+
+Generador de currículum vitae responsive, construido con HTML, CSS y JavaScript. Permite cambiar entre tema claro y oscuro y exportar el CV a PDF con **html2pdf.js**.
+
 <p align="center">
-  <h1 align="center">CV Generator</h1>
-  <h4 align="center">Resume CV with dark/light mode and PDF export</h4>
+  <a href="https://freedarwuin.github.io/cv-generator/">
+    <img src="previews/live-server.png" alt="Vista previa de CV Generator" width="700">
+  </a>
 </p>
 
 <p align="center">
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-    <img alt="CSS3" src="https://img.shields.io/badge/-CSS3-0068BA?style=flat&logo=css3&logoColor=white" />
-  </a>
-
-  <a href="https://fontawesome.com/">
-    <img alt="FontAwesome" src="https://img.shields.io/badge/-Font_Awesome-2186DF?style=flat&logo=fontawesome&logoColor=white" />
-  </a>
-
-  <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5">
-    <img alt="HTML5" src="https://img.shields.io/badge/-HTML5-DD4D25?style=flat&logo=html5&logoColor=white" />
-  </a>
-
-  <a href="https://ekoopmans.github.io/html2pdf.js/">
-    <img alt="html2pdf.js" src="https://img.shields.io/badge/-html2pdf.js-16866B?style=flat&logo=javascript&logoColor=white" />
-  </a>
-  
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-    <img alt="Javascript" src="https://img.shields.io/badge/-Javascript-EFD81D?style=flat&logo=javascript&logoColor=white" /> 
-  </a> 
+  <a href="https://freedarwuin.github.io/cv-generator/">Ver demo en vivo</a>
+  ·
+  <a href="#personalizacion">Personalizar</a>
+  ·
+  <a href="#ejecucion-local">Ejecutar localmente</a>
 </p>
 
-<p align="center">
-  <img alt="Last commit" src="https://img.shields.io/github/last-commit/leag76/cv-generator?color=%23B5CDA3&logo=github&logoColor=white" />
-  <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/y/leag76/cv-generator?color=%23A76844&logo=github&logoColor=white" />
-  <img alt="Repo size" src="https://img.shields.io/github/repo-size/leag76/cv-generator?color=%23C1AC95&logo=github&logoColor=white" />
-</p>
+## Características
 
-## About
+- Diseño responsive para escritorio, laptop, tablet y móvil.
+- Modo claro y modo oscuro con preferencia guardada en `localStorage`.
+- Exportación del currículum a PDF mediante `html2pdf.js 0.9.3`.
+- Cálculo automático de la edad.
+- Menú adaptable y navegación con sección activa.
+- Botón para volver al inicio.
+- Iconos de Font Awesome.
+- Descarga directa de PDFs pregenerados desde pantallas móviles.
+- Currículum organizado en experiencia, educación, habilidades, certificados e intereses.
 
-CV Generator is an **HTML5**, **CSS3** and **Javascript** only project that allows you to create a modern, clean and personalized CV according to your tastes. It also allows you to have a CV in **dark mode** but also to be able to export it directly in **PDF** format.
+## Tecnologías
 
-This project is obviously **responsive**: for *desktop*, *laptop* and *tablet* screens, the CV will be displayed in its classic form as a PDF. While for *mobile phone* screens, this one will be presented as a small showcase website.
+- HTML5
+- CSS3
+- JavaScript
+- [html2pdf.js](https://ekoopmans.github.io/html2pdf.js/) 0.9.3
+- [Font Awesome](https://fontawesome.com/)
 
-To export the CV in PDF format, the **html2pdf.js** library was used and the version is *0.9.3*. (this is the most stable version) html2pdf.js is a Client-side HTML-to-PDF rendering using pure JS, she converts any webpage or element into a printable PDF entirely client-side using **html2canvas** and **jsPDF**. ([html2pdf.js Github repo](https://github.com/eKoopmans/html2pdf.js "Go to the html2pdf.js Github repo")).
+## Vista previa
 
-For the icons, the Internet's icon library and toolkit **Font Awesome** was used.
+| Vista previa | Archivo |
+| --- | --- |
+| Servidor local | [`previews/live-server.png`](previews/live-server.png) |
+| Ir a Live Server | [`previews/go-live.png`](previews/go-live.png) |
+| Puerto 5500 | [`previews/port-5500.png`](previews/port-5500.png) |
 
-> <sub>The project was created by inspiring me from the <a href="https://github.com/bedimcode">bedimcode</a> project called **Responsive Resume Cv Smith** (project link: <a href="https://github.com/bedimcode/responsive-resume-cv-smith">responsive-resume-cv-smith</a>) and watching the associated Youtube video of Bedimcode: <a href="https://www.youtube.com/watch?v=oYjseP_Qhv4">Responsive Resume Cv Website Using HTML CSS And JavaScript | Light/Dark Theme & Export PDF</a></sub>
+## Ejecución local
 
-### Features
-
-This is the **first version** of the project (*v1.0*). To improve the project in a new version (*v2.0*), CV customization could be added: choice of a color palette other than white/black, addition of other less common sections. But also adding data in a `.js` file instead of touching the `index.html` file.
-
-- [x] Light/dark mode toggle
-- [x] Download to PDF
-- [x] Responsive
-- [x] Mobile screen mode
-- [ ] Customization
-
-## Demo
-
-Live demo here: [live demo](https://freedarwuin.github.io/cv-generator/ "Go to the live demo")
-
-## Get started
-
-### Prerequisites
-The only thing you need is a text editor or an IDE that allows connection to a local server (I recommend Visual Studio Code with its Live Server extension)
-
-### Installation
-
-To start, let's go clone the project:
-
-```
-git clone https://github.com/LeaG76/cv-generator.git
-```
-
-Then, open it from your favorite text editor or IDE, normally you should have this project structure:
+No se requieren dependencias ni pasos de compilación.
 
 ```bash
+git clone https://github.com/freedarwuin/cv-generator.git
+cd cv-generator
+```
+
+Puedes abrir `index.html` directamente en el navegador. Para evitar restricciones de recursos locales y probar correctamente la generación de PDF, se recomienda usar un servidor local:
+
+### Visual Studio Code
+
+1. Instala la extensión **Live Server**.
+2. Abre la carpeta del proyecto.
+3. Haz clic en **Go Live** en la barra inferior.
+4. Accede a la dirección que aparece en el navegador, normalmente `http://127.0.0.1:5500/`.
+
+También puedes usar una extensión de servidor local o una herramienta equivalente de tu editor preferido.
+
+## Personalización
+
+La información principal se encuentra en [`index.html`](index.html). Puedes modificar:
+
+- Nombre y profesión.
+- Datos de contacto.
+- Perfil profesional.
+- Experiencia laboral.
+- Educación y certificados.
+- Habilidades e idiomas.
+- Intereses y fortalezas.
+- Redes sociales y proyectos.
+
+Los estilos se encuentran en:
+
+- `assets/stylesheets/style.css`
+- `assets/stylesheets/layout.css`
+
+La lógica principal está en [`assets/javascripts/main.js`](assets/javascripts/main.js). Allí se controlan el menú, el tema, la navegación activa y la generación del PDF.
+
+### Cambiar la foto de perfil
+
+Reemplaza el archivo `assets/pictures/profile.png` conservando el mismo nombre, o modifica la propiedad `src` del elemento con `id="home-img"` en `index.html`:
+
+```html
+<img src="assets/pictures/profile.png" alt="Foto de Darwuin Pedroza" class="home_img" id="home-img">
+```
+
+### Cambiar la fecha de nacimiento
+
+Para actualizar el cálculo automático de la edad, modifica la variable `fechaNac` en `assets/javascripts/main.js`:
+
+```javascript
+const fechaNac = "1988-01-22";
+```
+
+El formato debe ser `AAAA-MM-DD`.
+
+### Cambiar los iconos
+
+Los iconos utilizan clases de [Font Awesome](https://fontawesome.com/icons). Puedes reemplazar una clase como `fa-user` por otro icono disponible y conservar las clases de estructura del proyecto.
+
+## Exportar a PDF
+
+Haz clic en el icono de descarga situado junto al currículum. El archivo generado será nombrado según el tema activo:
+
+- `Darwuin Pedroza-light.pdf`
+- `Darwuin Pedroza-dark.pdf`
+
+El PDF se genera desde el elemento `#area-cv` con una orientación A4 vertical.
+
+En dispositivos móviles, el botón **Descargar CV** selecciona un PDF preexistente según el tema:
+
+- `assets/pdf/myResumeCV-light.pdf`
+- `assets/pdf/myResumeCV-dark.pdf`
+
+## Estructura del proyecto
+
+```text
+cv-generator/
 ├── assets/
 │   ├── javascripts/
 │   │   ├── main.js
@@ -83,81 +134,27 @@ Then, open it from your favorite text editor or IDE, normally you should have th
 │   │   └── myResumeCV-light.pdf
 │   ├── pictures/
 │   │   ├── favicon/
-│   │   │   └── ...
-│   │   ├── results/
-│   │   │   └── myResumeCV-light.png
 │   │   ├── profile.png
 │   │   └── profile.txt
 │   └── stylesheets/
 │       ├── layout.css
 │       └── style.css
+├── previews/
+│   ├── go-live.png
+│   ├── live-server.png
+│   └── port-5500.png
 ├── index.html
 └── README.md
 ```
 
-> <sub>**Warning**: To carry out this project, you must be connected to a *local server*, more particularly for the generation in **PDF** and for the display of the image from the txt file. More details [below](#configuration "Go to configuration")</sub>
->> <sub>If you can't connect to a local server, no problem, don't worry! You can simply upgrade to an older version of **html2pdf.js**. Version *0.8.0* can save a pdf by just launching the `.html` file on a browser without going through a local server</sub>
+## Demo
 
-### Configuration
+La versión publicada está disponible en:
 
-<details open>
-  <summary><b>Local server</b></summary>
-  <br>
-  As said before, to be able to use this project, you will have to be connected to a local server
-  
-  Plusieurs éditeurs de textes ont la fonctionnalité de local server (like VSCode, SublimeText, Atom, ...)
+<https://freedarwuin.github.io/cv-generator/>
 
-  <p align="center">
-    <img alt="Live Server" src="previews/live-server.png" /></br>
-    <img alt="Go Live" src="previews/go-live.png" />
-    <img alt="Port 5500" src="previews/port-5500.png" />
-  </p>
-</details>
+## Créditos
 
-<details close>
-  <summary><b>Convert your profile picture into an url in Base64</b></summary>
-  <br>
+Proyecto adaptado de [cv-generator](https://github.com/LeaG76/cv-generator) creado por Léa Gallier y personalizado por Darwuin Pedroza.
 
-  To convert your image to a Base64 url, you can go to websites allowing this action to be carried out such as: [Base64 Image](https://www.base64-image.de/ "Go to Base64 Image") or [elmah.io](https://elmah.io/tools/base64-image-encoder "Go to elmah.io")
-
-  Plusieurs façons :
-
-  - Avec un serveur local (fichier main.js -> profile.txt)
-  - Sans serveur local (mettre url directement dans la src de l'image dans le fichier .html)
-
-  Convert your logo image to Base64 and replace this :
-
-```html
-<img src="assets/pictures/profile.png" alt="Icon picture" class="home_img">
-```
-
-by this :
-
-```html
-<img src="your_base64_url" alt="Icon picture" class="home_img">
-```
-</details>
-
-<details close>
-  <summary><b>Create multiples size Favicons</b></summary>
-  <br>
-</details>
-
-## Usage
-
-### Put your informations
-
-You can therefore modify the index.html file to put your information. If you want different icons, you can go to [Font Awesome](https://fontawesome.com/search?m=free&o=r "Go to Font Awesome") and select icons from a large selection of free and open-source icons
-
-### Customize your resume CV
-
-- changer palette couleur
-- changer police
-- changer icons Font Awesome
-
-## Examples
-
-## TodoList
-
-- Change html2pdf Version 0.8.0 -> 0.9.3
-- Création d'un fichier js dans lequel on met le contenu du CV
+Inspirado inicialmente en el proyecto **Responsive Resume Cv Smith** de [Bedimcode](https://github.com/bedimcode).
